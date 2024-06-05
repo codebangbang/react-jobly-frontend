@@ -13,7 +13,7 @@ function CompanyCard({ name, description, logoUrl, handle }) {
             <p>{ description } </p>
           </Link>
         </h6>
-        <p className="card-text">{company.description}</p>
+        <p className="card-text">{companies.description}</p>
       </div>
     </div>
   );
