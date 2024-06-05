@@ -1,16 +1,21 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useState, useEffect} from 'react';
 // import "./JobCard.css";
 import UserContext from "../auth/UserContext";
 
 function JobCard() {
   const { hasAppliedToJob, applyToJob  } = useContext(UserContext);
   const [applied, setApplied] = useState();
+  const id = "123"; // Replace with the actual id value
+  const title = "Software Engineer"; // Replace with the actual title value
+  const companyName = "ABC Company"; // Replace with the actual company name value
+  const salary = 50000; // Replace with the actual salary value
+  const equity = 0.05; // Replace with the actual equity value
 
-  reactEffect(function updateAppliedStatus() {
+  useEffect(function updateAppliedStatus() {
     setApplied(hasAppliedToJob(id));
   }, [id, hasAppliedToJob]);
 
-  async function handleApply(evt) {
+  async function handleApply() {
     if (hasAppliedToJob(id)) return;
     applyToJob(id);
     setApplied(true);
