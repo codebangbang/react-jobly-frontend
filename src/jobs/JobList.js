@@ -6,7 +6,7 @@ import LoadingSpinner from '../common/LoadingSpinner';
 
 
 function JobList() {
-  const [jobs, setJobs] = useState(null);
+  const [jobs, setJobs] = useState([]);
 
   useEffect(function updateJobsListOnMount() {
     search();
@@ -15,7 +15,12 @@ function JobList() {
   /** Triggered by search form submit; reloads jobs. */
   async function search(title) {
     let jobs = await JoblyApi.getJobs(title);
-    setJobs(jobs);
+    if (Array.isArray(jobs)) {
+      setJobs(jobs);
+    } else { 
+      console.error("Expected an array of jobs but got: ", jobs);
+      setJobs([]);
+    }
   }
 
   if (!jobs) return <LoadingSpinner />;

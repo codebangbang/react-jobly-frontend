@@ -1,12 +1,16 @@
-import React from 'react';
-import JobCard from './JobCard';
+import React from "react";
+import JobCard from "./JobCard";
 
+function JobCardList({ jobs, apply }) {
+  if (!Array.isArray(jobs)) {
+    console.error("Expected an array of jobs but got: ", jobs);
+    return null;
+  }
 
-function JobCardList(jobs, apply) {
   return (
     <div className="JobCardList">
       <h1>JobCardList</h1>
-      {jobs.map(job => (
+      {jobs.map((job) => (
         <JobCard
           key={job.id}
           id={job.id}
@@ -16,7 +20,6 @@ function JobCardList(jobs, apply) {
           companyName={job.companyName}
           apply={apply}
         />
-      
       ))}
     </div>
   );
