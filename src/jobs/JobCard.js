@@ -1,14 +1,8 @@
 import React, { useContext, useState, useEffect } from "react";
-// import "./JobCard.css";
+import "./JobCard.css";
 import UserContext from "../auth/UserContext";
 
-function JobCard({
-  id,
-  title,
-  salary,
-  equity,
-  companyName
-}) {
+function JobCard({ id, title, salary, equity, companyName }) {
   const { hasAppliedToJob, applyToJob } = useContext(UserContext);
   const [applied, setApplied] = useState(false);
 
@@ -28,7 +22,7 @@ function JobCard({
   return (
     <div className="JobCard card">
       <div className="card-body">
-        <h6 className="card-title">{title}</h6>
+        <h3 className="card-title">{title}</h3>
         <p>{companyName}</p>
         {salary && <div>Salary: {formatSalary(salary)}</div>}
         {equity !== undefined && <div>Equity: {equity}</div>}

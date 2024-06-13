@@ -1,6 +1,7 @@
 import React from "react";
 import JobCard from "./JobCard";
 
+
 function JobCardList({ jobs, apply }) {
   if (!Array.isArray(jobs)) {
     console.error("Expected an array of jobs but got: ", jobs);
@@ -9,7 +10,7 @@ function JobCardList({ jobs, apply }) {
 
   return (
     <div className="JobCardList">
-      <h1>JobCardList</h1>
+      <h2> Now Hiring!</h2>
       {jobs.map((job) => (
         <JobCard
           key={job.id}

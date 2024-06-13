@@ -1,11 +1,36 @@
-CompanyCard-card {
+/* .CompanyCard {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 100%;
+  width: 60%;
   height: 100%;
   padding: 1rem;
   border-radius: 0.5rem;
-  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
-  background-color: white;
+  border: 1px solid black;
+}
+
+
+.CompanyList-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem;
+  padding: 1rem;
+} */
+
+.CompanyCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  width: 60%;
+}
+
+.CompanyList-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
