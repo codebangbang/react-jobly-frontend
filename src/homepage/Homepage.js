@@ -10,14 +10,14 @@ function Homepage() {
     <div className="Homepage">
       <div className="container text-center">
         <h1>Jobly</h1>
-        <p>All the jobs in one, convenient place.</p>
+        <h3>All the jobs in one, convenient place.</h3>
         {currentUser ? (
           <React.Fragment>
             <h2>Welcome Back, {currentUser.firstName || currentUser.username}!</h2>
           </React.Fragment>
         ) : (
           <React.Fragment>
-            <h2>Welcome to Jobly</h2>
+            <h2>Welcome aboard!</h2>
             <Link to="/login" className="btn btn-primary font-weight-bold mr-2">
               Login
             </Link>

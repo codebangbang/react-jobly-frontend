@@ -91,23 +91,16 @@ function App() {
    * Make sure you await this function and check its return value!
    */
 
-
-
-
-
-
-
-
-  // async function login(loginData) {
-  //   try {
-  //     let token = await JoblyApi.login(loginData);
-  //     setToken(token);
-  //     return { success: true };
-  //   } catch (errors) {
-  //     console.error("login failed", errors);
-  //     return { success: false, errors };
-  //   }
-  // }
+  async function login(loginData) {
+    try {
+      let token = await JoblyApi.login(loginData);
+      setToken(token);
+      return { success: true };
+    } catch (errors) {
+      console.error("login failed", errors);
+      return { success: false, errors };
+    }
+  }
 
   /** Checks if a job has been applied for. */
   function hasAppliedToJob(id) {
