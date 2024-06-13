@@ -9,7 +9,7 @@ import LoginForm from "../auth/LoginForm";
 import SignupForm from "../auth/SignupForm";
 import PrivateRoute from "./PrivateRoute";
 
-function AppRoutes({ login, signup }) {
+function AppRoutes({ login, signup, logout  }) {
   console.debug("AppRoutes");
 
   return (
@@ -18,6 +18,7 @@ function AppRoutes({ login, signup }) {
         <Route path="/" element={<Homepage />} />
         <Route path="/login" element={<LoginForm login={login} />} />
         <Route path="/signup" element={<SignupForm signup={signup} />} />
+
         <Route
           path="/companies"
           element={<PrivateRoute element={<CompanyList />} />}

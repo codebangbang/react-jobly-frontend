@@ -10,7 +10,7 @@ function JobCardList({ jobs, apply }) {
 
   return (
     <div className="JobCardList">
-      <h2> Now Hiring!</h2>
+      <h1> Now Hiring!</h1>
       {jobs.map((job) => (
         <JobCard
           key={job.id}

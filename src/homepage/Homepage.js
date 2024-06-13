@@ -12,16 +12,20 @@ function Homepage() {
         <h1>Jobly</h1>
         <p>All the jobs in one, convenient place.</p>
         {currentUser ? (
-          <h2>Welcome Back, {currentUser.firstName || currentUser.username}!</h2>
+          <React.Fragment>
+            <h2>Welcome Back, {currentUser.firstName || currentUser.username}!</h2>
+          </React.Fragment>
         ) : (
-          <h2>Welcome to Jobly</h2>
+          <React.Fragment>
+            <h2>Welcome to Jobly</h2>
+            <Link to="/login" className="btn btn-primary font-weight-bold mr-2">
+              Login
+            </Link>
+            <Link to="/signup" className="btn btn-primary font-weight-bold">
+              Sign up
+            </Link>
+          </React.Fragment>
         )}
-        <Link to="/login" className="btn btn-primary font-weight-bold mr-2">
-          Login
-        </Link>
-        <Link to="/signup" className="btn btn-primary font-weight-bold">
-          Sign up
-        </Link>
       </div>
     </div>
   );

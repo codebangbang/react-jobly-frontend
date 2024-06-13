@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Alert from '../common/Alert';
 
 function LoginForm({ login}) {
-    const history = useNavigate();
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
         username: "",
         password: ""
@@ -14,14 +14,14 @@ function LoginForm({ login}) {
         evt.preventDefault();
         let result = await login(formData);
         if (result.success) {
-            history.push("/companies");
+            navigate("/companies");
         } else {
             setFormErrors(result.errors);
         }
     }
 
     function handleChange(evt) {
-        const  {name, value} = evt.target;
+        const {name, value} = evt.target;
         setFormData(data => ({ ...data, [name]: value }));
     }
 
