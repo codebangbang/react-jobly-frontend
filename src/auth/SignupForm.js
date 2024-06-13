@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Alert from '../common/Alert';
 
 function SignupForm({ signup }) {
-  const history = useNavigate();
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     username: '',
     password: '',
@@ -24,7 +24,7 @@ function SignupForm({ signup }) {
     evt.preventDefault();
     let result = await signup(formData);
     if (result.success) {
-      history.push('/companies');
+      navigate('/companies');
     } else {
       setFormErrors(result.errors);
     }
