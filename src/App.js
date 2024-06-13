@@ -11,14 +11,6 @@ import "./App.css";
 
 export const TOKEN_STORAGE_ID = "jobly-token";
 
-// function App() {
-//   return (
-//     <div className="App">
-//       <h1>Ryan's app.js file</h1>
-//     </div>
-//   );
-// }
-
 // export default App;
 
 function App() {
@@ -27,15 +19,15 @@ function App() {
   const [currentUser, setCurrentUser] = useState(null);
   const [token, setToken] = useLocalStorage(TOKEN_STORAGE_ID);
 
-  console.debug(
-    "App",
-    "infoLoaded=",
-    infoLoaded,
-    "currentUser=",
-    currentUser,
-    "token=",
-    token
-  );
+  // console.debug(
+  //   "App",
+  //   "infoLoaded=",
+  //   infoLoaded,
+  //   "currentUser=",
+  //   currentUser,
+  //   "token=",
+  //   token
+  // );
 
   // Load user info from API. Until a user is logged in and they have a token,
   // this should not run. It only needs to re-run when a user logs out, so
